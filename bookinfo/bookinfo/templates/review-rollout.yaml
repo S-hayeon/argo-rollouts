@@ -55,15 +55,6 @@ spec:
             name: reviews
             canarySubsetName: canary  # required
             stableSubsetName: stable  # required
-
-      canaryService: reviews-canary
-      stableService: reviews-stable
-      trafficRouting:
-        istio:
-          virtualService:
-            name: reviews
-            routes:
-            - reviews
       maxSurge: {{ .Values.argoRollout.maxSurge }}
       maxUnavailable: {{ .Values.argoRollout.maxUnavailable }}
       steps:
