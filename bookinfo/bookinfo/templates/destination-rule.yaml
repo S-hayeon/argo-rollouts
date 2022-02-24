@@ -16,10 +16,10 @@ metadata:
 spec:
   host: reviews
   subsets:
-  - name: stable
+  - name: v1
     labels:
       app: reviews
-  - name: canary
+  - name: v2
     labels:
       app: reviews
 ---
