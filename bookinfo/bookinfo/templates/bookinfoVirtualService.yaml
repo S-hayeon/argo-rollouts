@@ -53,4 +53,4 @@ spec:
     - destination:
         host: reviews-canary
         subset: canary
-        weight: 0
+      weight: 0
