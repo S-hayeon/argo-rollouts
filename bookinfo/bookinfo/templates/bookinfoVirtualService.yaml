@@ -45,7 +45,8 @@ spec:
   hosts:
     - reviews-stable
   http:
-  - route:
+  - name: reviews
+    route:
     - destination:
         host: reviews-stable
         port:
