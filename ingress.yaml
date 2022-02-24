@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bookinfo-ingress
+#annotations:
+#   traefik.ingress.kubernetes.io/router.entrypoints: web
+
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: bookinfo.hayeona92.link
+      http:
+       paths:
+         - pathType: Prefix
+           path: /
+           backend:
+             service:
+               name: productpage
+               port:
+                 number: 9080
+
