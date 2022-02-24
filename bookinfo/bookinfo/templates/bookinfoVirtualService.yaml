@@ -48,12 +48,12 @@ spec:
   - name: reviews
     route:
     - destination:
-        host: reviews-stable
+        host: reviews-stable.bookinfo.svc.cluster.local
         port:
           number: 9080
       weight: 100
     - destination:
-        host: reviews-canary
+        host: reviews-canary.bookinfo.svc.cluster.local
         port:
           number: 9080
       weight: 0
