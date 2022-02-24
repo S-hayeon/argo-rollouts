@@ -51,6 +51,7 @@ spec:
         istio:
           virtualService:
             name: reviews
+            routes: reviews
       maxSurge: {{ .Values.argoRollout.maxSurge }}
       maxUnavailable: {{ .Values.argoRollout.maxUnavailable }}
       steps:
