@@ -53,8 +53,8 @@ spec:
             # - primary                 # optional if there is a single route in VirtualService, required otherwise
           destinationRule:
             name: reviews
-            canarySubsetName: canary  # required
-            stableSubsetName: stable  # required
+            canarySubsetName: v1  # required
+            stableSubsetName: v2  # required
       maxSurge: {{ .Values.argoRollout.maxSurge }}
       maxUnavailable: {{ .Values.argoRollout.maxUnavailable }}
       steps:

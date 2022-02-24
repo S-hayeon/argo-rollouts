@@ -48,9 +48,9 @@ spec:
   - route:
     - destination:
         host: reviews
-        subset: stable
+        subset: v1
       weight: 100
     - destination:
         host: reviews
-        subset: canary
+        subset: v2
       weight: 0
