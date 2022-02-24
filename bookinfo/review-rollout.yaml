@@ -51,8 +51,6 @@ spec:
         istio:
           virtualService:
             name: reviews
-            routes:
-              - reviews
       maxSurge: "25%"
       maxUnavailable: 0
       steps:
