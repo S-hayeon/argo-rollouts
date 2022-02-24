@@ -1,5 +1,5 @@
 nameSpace: bookinfo
-virtualServiceHost: productpage.bookinfo.svc.cluster.local
+VirtualServiceHost: bookinfo.svc.cluster.local
 
 ingressHost: "bookinfo.hayeona92.link"
 ingressClass: nginx

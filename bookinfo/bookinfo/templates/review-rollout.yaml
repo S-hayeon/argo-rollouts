@@ -45,6 +45,17 @@ spec:
   revisionHistoryLimit: 3
   strategy:
     canary: #Indicates that the rollout should use the Canary strategy
+      trafficRouting:
+        istio:
+          virtualService:
+            name: reviews
+            # routes:
+            # - primary                 # optional if there is a single route in VirtualService, required otherwise
+          destinationRule:
+            name: reviews
+            canarySubsetName: canary  # required
+            stableSubsetName: stable  # required
+
       canaryService: reviews-canary
       stableService: reviews-stable
       trafficRouting:

@@ -4,11 +4,11 @@ metadata:
   name: productpage
 spec:
   hosts:
-  - {{ .Values.virtualServiceHost }}
+  - productpage.{{ .Values.VirtualServiceHost }}
   http:
   - route:
     - destination:
-        host: {{ .Values.virtualServiceHost }}
+        host: productpage.{{ .Values.VirtualServiceHost }}
         subset: v1
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -43,17 +43,14 @@ metadata:
   name: reviews
 spec:
   hosts:
-    - reviews-stable.bookinfo.svc.cluster.local
+    - reviews-stable.{{ .Values.VirtualServiceHost }}
   http:
-  - name: reviews
-    route:
+  - route:
     - destination:
-        host: reviews-stable.bookinfo.svc.cluster.local
-        port:
-          number: 9080
+        host: reviews-stable
+        subset: stable
       weight: 100
     - destination:
-        host: reviews-canary.bookinfo.svc.cluster.local
-        port:
-          number: 9080
-      weight: 0
+        host: reviews-canary
+        subset: canary
+        weight: 0
