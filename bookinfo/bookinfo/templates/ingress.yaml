@@ -10,7 +10,7 @@ metadata:
 #   traefik.ingress.kubernetes.io/router.entrypoints: web
 
 spec:
-  ingressClassName: {{ .Values.ingressHost }}
+  ingressClassName: {{ .Values.ingressClass }}
   rules:
     - host: {{ .Values.ingressHost }}
       http:
