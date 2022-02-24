@@ -48,9 +48,11 @@ spec:
   - route:
     - destination:
         host: reviews-stable
-        subset: v1
-      weight: 90
+        port:
+          number: 9080
+      weight: 100
     - destination:
         host: reviews-canary
-        subset: v2
-      weight: 10
+        port:
+          number: 9080
+      weight: 0
