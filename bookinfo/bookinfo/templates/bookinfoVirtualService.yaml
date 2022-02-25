@@ -43,7 +43,7 @@ metadata:
   name: reviews
 spec:
   hosts:
-    - reviews.{{ .Values.VirtualServiceHost }}
+    - reviews
   http:
   - route:
     - destination:
