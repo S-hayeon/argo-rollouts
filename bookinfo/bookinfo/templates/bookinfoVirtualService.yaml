@@ -43,14 +43,16 @@ metadata:
   name: reviews
 spec:
   hosts:
-    - reviews
+    - reviews.{{ .Values.VirtualServiceHost }}
   http:
   - route:
-    - destination:
-        host: reviews #.{{ .Values.VirtualServiceHost }}
+    - name: "reviews-stable"
+      destination:
+        host: reviews.{{ .Values.VirtualServiceHost }}
         subset: stable
       weight: 100
-    - destination:
-        host: reviews #.{{ .Values.VirtualServiceHost }}
+    - name: "reviews-canary"
+      destination:
+        host: reviews.{{ .Values.VirtualServiceHost }}
         subset: canary
       weight: 0
