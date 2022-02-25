@@ -14,7 +14,7 @@ kind: DestinationRule
 metadata:
   name: reviews
 spec:
-  host: reviews.{{ .Values.VirtualServiceHost }}
+  host: reviews
   subsets:
   - name: canary
     labels:
