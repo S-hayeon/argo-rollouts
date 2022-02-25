@@ -18,10 +18,10 @@ spec:
   subsets:
   - name: canary
     labels:
-      app: review
+      app: reviews
   - name: stable
     labels:
-      app: review
+      app: reviews
 ---
 
 apiVersion: networking.istio.io/v1alpha3

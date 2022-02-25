@@ -46,12 +46,12 @@ spec:
     - reviews #.{{ .Values.VirtualServiceHost }}
   http:
   - route:
-    - name: "stable"
+    - name: stable
       destination:
         host: reviews #.{{ .Values.VirtualServiceHost }}
         subset: stable
       weight: 100
-    - name: "canary"
+    - name: canary
       destination:
         host: reviews #.{{ .Values.VirtualServiceHost }}
         subset: canary
