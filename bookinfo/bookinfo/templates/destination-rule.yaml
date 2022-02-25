@@ -14,14 +14,14 @@ kind: DestinationRule
 metadata:
   name: reviews
 spec:
-  host: reviews
+  host: reviews.{{ .Values.VirtualServiceHost }}
   subsets:
-  - name: v1
+  - name: canary
     labels:
-      version: v1
-  - name: v2
+      app: review
+  - name: stable
     labels:
-      version: v2
+      app: review
 ---
 
 apiVersion: networking.istio.io/v1alpha3

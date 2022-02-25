@@ -6,8 +6,8 @@ ingressClass: nginx
 ingressAnnotations: {} #traefik.ingress.kubernetes.io/router.entrypoints: websecure
 
 argoRollout:
-  replicas: 10
+  replicas: 5
   maxSurge: "25%"
   maxUnavailable: 0
   setWeight: 10
-  duration: "1m"
+  duration: "30s"
